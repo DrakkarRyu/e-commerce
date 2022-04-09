@@ -2,6 +2,7 @@ import {HashRouter, Routes, Route} from 'react-router-dom'
 import {Cart, Home, ProductDetails} from './pages';
 import {ScreenLoading} from './components'
 import { useSelector } from 'react-redux';
+import React from 'react';
 
 function App() {
 

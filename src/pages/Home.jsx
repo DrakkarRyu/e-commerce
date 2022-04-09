@@ -8,12 +8,12 @@ const Home = () => {
     const dispatch = useDispatch();
     const products = useSelector(state => state.products);
     const categories = useSelector(state => state.categories);
-    const [search, setSearch] = useState("");   
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
         dispatch(getProductsThunk());
         dispatch(getCategoriesThunk());
-    },[]);
+    }, [dispatch]);
 
     const searchProducts = e => {
         e.preventDefault();
@@ -21,10 +21,10 @@ const Home = () => {
     }
 
     return (
-        <div>
+        <div className='HomePage'>
             <h1>Home Page</h1>
             <form onSubmit={searchProducts}>
-                <input type="text" placeholder='Search' value={search} onChange={e => setSearch(e.target.value)}/>
+                <input type="text" placeholder='Search' value={search} onChange={e => setSearch(e.target.value)} />
                 <button>Search</button>
             </form>
             {
@@ -39,17 +39,17 @@ const Home = () => {
                     products.length === 0 ? (
                         <p>Sorry we didn't found any product with these words</p>
                     ) : (
-                    products.map(product =>(
-                        <li key={product.id}>
-                            <Link to={`/product/${product.id}`}>
-                            <h2>{product.title}</h2>
-                            <img src={product.productImgs?.[0]} alt="" />
-                            <img src={product.productImgs?.[1]} alt="" />
-                            <img src={product.productImgs?.[2]} alt="" />
-                            <h3>${product.price}</h3>
-                            </Link>
-                        </li>
-                    )))
+                        products.map(product => (
+                            <li key={product.id}>
+                                <Link to={`/product/${product.id}`}>
+                                    <h2>{product.title}</h2>
+                                    <img src={product.productImgs?.[0]} alt="" />
+                                    <img src={product.productImgs?.[1]} alt="" />
+                                    <img src={product.productImgs?.[2]} alt="" />
+                                    <h3>${product.price}</h3>
+                                </Link>
+                            </li>
+                        )))
                 }
             </ul>
         </div>

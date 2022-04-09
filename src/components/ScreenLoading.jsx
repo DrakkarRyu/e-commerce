@@ -4,7 +4,7 @@ import '../styles/screenLoading.css';
 const ScreenLoading = () => {
     return (
         <div className='screenLoading'>
-            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         </div>
     );
 };
