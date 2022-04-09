@@ -10,14 +10,14 @@ const ProductDetails = () => {
     const products = useSelector(state => state.products);
     const productInfo = products.find(product => product.id === Number(id));
     const [productsFiltered, setProductsFiltered] = useState([]);
-    
+
     useEffect(() => dispatch(getProductsThunk()), [dispatch]);
     useEffect(() => {
-        if (productInfo){
+        if (productInfo) {
             axios.get(`https://ecommerce-api-react.herokuapp.com/api/v1/products?category=${productInfo?.category.id}`)
                 .then(res => setProductsFiltered(res.data.data.products));
         }
-    }, [dispatch,productInfo])
+    }, [dispatch, productInfo])
 
     return (
         <section className='productDetails'>
