@@ -1,0 +1,18 @@
+.navbar {
+    position: relative;
+}
+
+.login {
+    position: absolute;
+    bottom: -20px;
+    padding: -70px;
+    background: #ffffff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, .7);
+    transform: scale(0);
+    transition: .6s;
+    transform-origin: top ;
+}
+
+.login.open {
+    transform: scale(1);
+}
