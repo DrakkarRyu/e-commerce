@@ -56,3 +56,11 @@ export const filterSearchThunk = search => {
             .finally(() => dispatch(setIsLoading(false)))
     }
 }
+
+export const loginThunk = credentials => {
+    return dispatch => {
+        dispatch(setIsLoading(true));
+        return axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/users/login', credentials)
+            .finally(() => dispatch(setIsLoading(false)));
+    }
+}
