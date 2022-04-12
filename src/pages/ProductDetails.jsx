@@ -48,7 +48,7 @@ const ProductDetails = () => {
                 {
                     productsFiltered.map(product => (
                         <li key={product.id}>
-                            <Link to={`/product/${product.id}`}>
+                            <Link to={`/shop/${product.id}`}>
                                 <h2>{product.title}</h2>
                                 <img src={product.productImgs?.[0]} alt="" />
                                 <img src={product.productImgs?.[1]} alt="" />
