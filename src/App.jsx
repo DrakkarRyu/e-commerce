@@ -1,5 +1,5 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import { Cart, Home, ProductDetails } from './pages';
+import { Home, ProductDetails } from './pages';
 import { ScreenLoading, NavBar } from './components'
 import { useSelector } from 'react-redux';
 import React from 'react';
@@ -17,7 +17,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/product/:id' element={<ProductDetails />} />
-          <Route path='/cart' element={<Cart />} />
         </Routes>
       </HashRouter>
     </div>

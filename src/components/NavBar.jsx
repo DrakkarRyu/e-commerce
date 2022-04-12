@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { loginThunk } from '../redux/actions';
+import { getCartThunk, loginThunk } from '../redux/actions';
 import '../styles/NavBar.css';
 import Cart from './Cart';
 
@@ -26,12 +26,17 @@ const NavBar = () => {
             })
     }
 
+    const openCart = () => {
+        setIsCartOpen(!isCartOpen);
+        dispatch(getCartThunk())
+    }
+
     return (
         <div className='navbar'>
             <nav>
                 <strong>Product app</strong>
                 <button onClick={() => setIsLoginOpen(!isLoginOpen)}>Login</button>
-                <button onClick={() => setIsCartOpen(!isCartOpen)}>Cart</button>
+                <button onClick={openCart}>Cart</button>
             </nav>
             {
                 <form onSubmit={login} className={`login ${isLoginOpen ? 'open' : ''}`}>

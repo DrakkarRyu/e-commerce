@@ -9,8 +9,18 @@
     width: 250px;
     transition: 1s;
     transform: translateX(250px);
+    overflow: auto;
 }
 
 .open {
     transform: translateX(0);
+}
+
+.cart-modal .cart-list {
+    list-style: none;
+}
+
+.cart-modal .cart-list li{
+    margin-bottom: 20px;
+
 }
