@@ -1,5 +1,9 @@
 import axios from "axios"
 
+const getConfig = () => ({
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
+});
+
 export const actions = {
     setProducts: "SET_PRODUCTS",
     setIsLoading: "SET_IS_LOADING",
@@ -61,6 +65,14 @@ export const loginThunk = credentials => {
     return dispatch => {
         dispatch(setIsLoading(true));
         return axios.post('https://ecommerce-api-react.herokuapp.com/api/v1/users/login', credentials)
+            .finally(() => dispatch(setIsLoading(false)));
+    }
+}
+
+export const addToCartThunk = products => {
+    return dispatch => {
+        dispatch(setIsLoading(true));
+        return axios.post(`https://ecommerce-api-react.herokuapp.com/api/v1/cart/`, products, getConfig())
             .finally(() => dispatch(setIsLoading(false)));
     }
 }
