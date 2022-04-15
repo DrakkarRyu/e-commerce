@@ -10,12 +10,10 @@ const Cart = ({ isCartOpen }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     let total = 0;
-    const cartProducts = useSelector(state => state.cart)
-    console.log(cartProducts)
 
-    if(cartProducts?.length > 0){
-        if(cartProducts?.length > 1){
-            total = cartProducts?.reduce((initial, current) => {
+    if(cart?.length > 0){
+        if(cart?.length > 1){
+            total = cart?.reduce((initial, current) => {
                 if(typeof initial === 'number'){
                     return initial + (current.price * current.productsInCart?.quantity)
                 } else {
@@ -23,7 +21,7 @@ const Cart = ({ isCartOpen }) => {
                 }
             });
         } else {
-            total = cartProducts?.[0].price * cartProducts?.[0].productsInCart.quantity
+            total = cart?.[0].price * cart?.[0].productsInCart.quantity
         }
     }
 
@@ -56,7 +54,7 @@ const Cart = ({ isCartOpen }) => {
                     <span className='label'>Total</span>
                     <b>$ {total}</b>
                 </div>
-                <button className='buy-button' onClick={checkout} disabled={!Boolean(cartProducts)}>
+                <button className='buy-button' onClick={checkout} disabled={!Boolean(cart)}>
                     Checkout
                 </button>
             </div>
