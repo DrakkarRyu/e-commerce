@@ -7,7 +7,6 @@ import { History, PurchaseItem } from '../components';
 const Purchases = () => {
 
     const purchases = useSelector(state => state.purchases);
-    console.log(purchases)
     const dispatch = useDispatch();
     useEffect(() => dispatch(getPurchasesThunk()), [dispatch])
 

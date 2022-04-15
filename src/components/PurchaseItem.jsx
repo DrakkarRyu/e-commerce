@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const PurchaseItem = ({ purchase }) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const date = new Date(purchase.createAt).toLocaleDateString('en-us', options);
+    const date = new Date(purchase.createdAt).toLocaleDateString('en-us', options);
     const navigate = useNavigate();
 
     return (
