@@ -5,7 +5,7 @@ const INITIAL_STATE = {
     isLoading: false,
     categories: [],
     cart: [], 
-    purchase: [],
+    purchases: [],
     loginMessage: ""
 }
 
@@ -34,7 +34,7 @@ const reducer = (state = INITIAL_STATE, action) => {
         case actions.setPurchase:
             return {
                 ...state,
-                purchase: action.payload
+                purchases: action.payload
             }
         case actions.setLoginMessage:
             return{

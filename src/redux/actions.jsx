@@ -33,9 +33,9 @@ export const setCart = cart => ({
     payload: cart
 })
 
-export const setPurchase = purchase => ({
+export const setPurchase = purchases => ({
     type: actions.setPurchase,
-    payload: purchase
+    payload: purchases
 })
 
 export const setLoginMessage = message => ({
@@ -129,7 +129,7 @@ export const getPurchasesThunk = () => {
     return dispatch => {
         dispatch(setIsLoading(true));
         axios.get('https://ecommerce-api-react.herokuapp.com/api/v1/purchases', getConfig())
-            .then(res => dispatch(setPurchase(res.data.data.purchases)))
+            .then(res => dispatch(setPurchase(res.data?.data?.purchases)))
             .finally(() => dispatch(setIsLoading(false)));
     }
 }
