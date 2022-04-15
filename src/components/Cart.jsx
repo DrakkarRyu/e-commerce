@@ -17,7 +17,7 @@ const Cart = ({ isCartOpen }) => {
                 if(typeof initial === 'number'){
                     return initial + (current.price * current.productsInCart?.quantity)
                 } else {
-                    return (initial.price * initial.productsInCart?.quantity) + (current.price.productsInCart?.quantity)
+                    return (initial.price * initial.productsInCart?.quantity) + (current.price*current.productsInCart?.quantity)
                 }
             });
         } else {
