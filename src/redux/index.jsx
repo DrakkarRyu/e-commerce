@@ -4,7 +4,9 @@ const INITIAL_STATE = {
     products: [],
     isLoading: false,
     categories: [],
-    cart: []
+    cart: [], 
+    purchase: [],
+    loginMessage: ""
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -28,6 +30,16 @@ const reducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 cart: action.payload
+            }
+        case actions.setPurchase:
+            return {
+                ...state,
+                purchase: action.payload
+            }
+        case actions.setLoginMessage:
+            return{
+                ...state,
+                loginMessage: action.payload
             }
         default:
             return state;

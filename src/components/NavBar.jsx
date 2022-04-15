@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getCartThunk, loginThunk } from '../redux/actions';
+import { useNavigate } from 'react-router-dom';
+import { getCartThunk, loginThunk, setLoginMessage } from '../redux/actions';
 import '../styles/NavBar.css';
 import Cart from './Cart';
 
@@ -12,6 +13,7 @@ const NavBar = () => {
     const [loginError, setLoginError] = useState("");
     const [isCartOpen, setIsCartOpen] = useState(false);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const login = e => {
         e.preventDefault();
         const credentials = { email, password }
@@ -27,15 +29,31 @@ const NavBar = () => {
     }
 
     const openCart = () => {
-        setIsCartOpen(!isCartOpen);
-        dispatch(getCartThunk())
+        if(localStorage.getItem("token")){
+            setIsCartOpen(!isCartOpen);
+            dispatch(getCartThunk());
+        } else {
+            dispatch(setIsLoginOpen(true))
+            dispatch(setLoginMessage("You have to Log In to access to your cart"))
+        };
     }
+
+    const openPurchases = () => {
+        if(localStorage.getItem("token")){
+            navigate("/Purchases");
+        } else {
+            dispatch(setIsLoginOpen(true))
+            dispatch(setLoginMessage("You have to Log In to access to your purchases"))
+        };
+    }
+
 
     return (
         <div className='navbar'>
             <nav>
-                <strong>Product app</strong>
+                
                 <button onClick={() => setIsLoginOpen(!isLoginOpen)}>Login</button>
+                <button onClick={openPurchases}>Open Purchase</button>
                 <button onClick={openCart}>Cart</button>
             </nav>
             {

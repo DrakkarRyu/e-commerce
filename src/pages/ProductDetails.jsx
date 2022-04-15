@@ -30,6 +30,7 @@ const ProductDetails = () => {
 
     return (
         <section className='productDetails'>
+            <Link to='/'>Home</Link>
             <div className='cart'>
                 <div className='input-container'>
                     <label htmlFor="quantity">quantity</label>
