@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { addToCartThunk, getProductsThunk } from '../redux/actions';
+import '../styles/ProductDetails.css'
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -10,7 +11,7 @@ const ProductDetails = () => {
     const products = useSelector(state => state.products);
     const productInfo = products.find(product => product.id === Number(id));
     const [productsFiltered, setProductsFiltered] = useState([]);
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => dispatch(getProductsThunk()), [dispatch]);
     useEffect(() => {
@@ -34,7 +35,9 @@ const ProductDetails = () => {
             <div className='cart'>
                 <div className='input-container'>
                     <label htmlFor="quantity">quantity</label>
+                    <button onClick={() => setQuantity(quantity-1)} disabled={quantity <= 1}>-</button>
                     <input type="text" id='quantity' value={quantity} onChange={e => setQuantity(e.target.value)}/>
+                    <button onClick={() => setQuantity(quantity+1)}>+</button>
                 </div>
                     <button onClick={addToCart}>add to cart</button>
             </div>
