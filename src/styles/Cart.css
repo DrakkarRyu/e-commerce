@@ -18,9 +18,9 @@
 
 .cart-modal .cart-list {
     list-style: none;
+    color: black;
 }
 
 .cart-modal .cart-list li{
     margin-bottom: 20px;
-
 }

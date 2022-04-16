@@ -12,7 +12,7 @@ body {
     color: white;
 }
 
-body a:link{
+.HomePage a:link{
     color: #000000;
 }
 
@@ -33,4 +33,8 @@ img {
 
 .HomePage li img{
     width: 200px;
+}
+
+body a:link{
+    color: #ffffff;
 }
