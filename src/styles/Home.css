@@ -7,7 +7,7 @@
 .card {
     list-style: none;
     background-color: #ffffff;
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     border-radius: 6px;
     margin-top: 50px;

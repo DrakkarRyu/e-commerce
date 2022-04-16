@@ -1,5 +1,8 @@
 .navbar {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
 }
 
 .login {
@@ -16,3 +19,4 @@
 .login.open {
     transform: scale(1);
 }
+
