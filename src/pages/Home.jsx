@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductsThunk, getCategoriesThunk, filterCategoryThunk, filterSearchThunk } from '../redux/actions';
 import { Link } from 'react-router-dom';
+import '../styles/Home.css'
 
 const Home = () => {
 
@@ -40,7 +41,7 @@ const Home = () => {
                         <p>Sorry we didn't found any product with these words</p>
                     ) : (
                         products.map(product => (
-                            <li key={product.id}>
+                            <li className='card' key={product.id}>
                                 <Link to={`/products/${product.id}`}>
                                     <h2>{product.title}</h2>
                                     <img src={product.productImgs?.[0]} alt="" />
