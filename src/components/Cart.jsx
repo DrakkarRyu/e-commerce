@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Cart.css'
@@ -11,13 +11,13 @@ const Cart = ({ isCartOpen }) => {
     const dispatch = useDispatch();
     let total = 0;
 
-    if(cart?.length > 0){
-        if(cart?.length > 1){
+    if (cart?.length > 0) {
+        if (cart?.length > 1) {
             total = cart?.reduce((initial, current) => {
-                if(typeof initial === 'number'){
+                if (typeof initial === 'number') {
                     return initial + (current.price * current.productsInCart?.quantity)
                 } else {
-                    return (initial.price * initial.productsInCart?.quantity) + (current.price*current.productsInCart?.quantity)
+                    return (initial.price * initial.productsInCart?.quantity) + (current.price * current.productsInCart?.quantity)
                 }
             });
         } else {
@@ -29,6 +29,7 @@ const Cart = ({ isCartOpen }) => {
         dispatch(purchaseCartThunk());
         navigate('/Purchases');
     }
+
     return (
         <div className={`cart-modal ${isCartOpen ? 'open' : ''}`}>
             My Cart
@@ -41,9 +42,11 @@ const Cart = ({ isCartOpen }) => {
                                 <p>quantity: {cart.productsInCart.quantity}</p>
                                 <span className='label'>Total: </span>
                                 <b>$ {cart.price * cart.productsInCart?.quantity}</b>
-                            <div className='Delete-Button'>
-                                <button onClick={() => dispatch(removeProductCart(cart.id))}>Delete</button>
+                                <div className='Delete-Button'>
+                                    <button onClick={() => dispatch(removeProductCart(cart.id))}>Delete</button>
+                                </div>
                             </div>
+                            <div >
                             </div>
                         </li>
                     ))

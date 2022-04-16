@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProductsThunk, getCategoriesThunk, filterCategoryThunk, filterSearchThunk } from '../redux/actions';
+import { getProductsThunk, getCategoriesThunk, filterCategoryThunk, filterSearchThunk, addToCartThunk } from '../redux/actions';
 import { Link } from 'react-router-dom';
 import '../styles/Home.css'
 
@@ -35,7 +35,7 @@ const Home = () => {
                     </button>
                 ))
             }
-            <ul>
+            <ul className='container'>
                 {
                     products.length === 0 ? (
                         <p>Sorry we didn't found any product with these words</p>
