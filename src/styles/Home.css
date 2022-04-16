@@ -1,16 +1,7 @@
 .card li{
-    margin-left:25%;
-    margin-top: 50px;
-    border-radius: 6px;
-    overflow:hidden;
-    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
     cursor: default;
     text-align: center;
-    justify-content: center;
-    background-color: #ffffff;
-    padding: 20px 10px;
-    width: 100%;
-    
+    background-color: #ffffff;    
 }
 
 .card {
@@ -18,4 +9,11 @@
     background-color: #ffffff;
     display: flex;
     flex-wrap: wrap;
+    border-radius: 6px;
+    margin-top: 50px;
+    overflow:hidden;
+    box-shadow: 0px 1px 10px rgba(255, 0, 0, 0.2);
+    padding: 20px 10px;
+    justify-content: center;
+    height: 100%;
 }

@@ -31,10 +31,30 @@ img {
     justify-content: space-between;
 }
 
-.HomePage li img{
-    width: 200px;
-}
 
 body a:link{
     color: #ffffff;
+}
+
+.images-hover{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.images-hover img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #ffffff;
+}
+
+.images-hover .over{
+    position: absolute;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.images-hover .over:hover{
+    opacity: 1;
 }
