@@ -8,7 +8,7 @@
 .login {
     position: absolute;
     bottom: -200px;
-    padding: 100px;
+    padding: 10px;
     background: #ffffff;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, .7);
     transform: scale(0);
