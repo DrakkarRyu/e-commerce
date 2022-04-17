@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { addToCartThunk, getProductsThunk } from '../redux/actions';
 import '../styles/ProductDetails.css'
+import { Galery } from '../components';
 
 const ProductDetails = () => {
     const { id } = useParams();
@@ -42,9 +43,7 @@ const ProductDetails = () => {
                     <button onClick={addToCart}>add to cart</button>
             </div>
             <h1>{productInfo?.title}</h1>
-            <img src={productInfo?.productImgs?.[0]} alt="" />
-            <img src={productInfo?.productImgs?.[1]} alt="" />
-            <img src={productInfo?.productImgs?.[2]} alt="" />
+            <Galery images={productInfo?.productImgs} />
             <p>{productInfo?.description}</p>
             <h3>${productInfo?.price}</h3>
             <ul className='Recomendations'>
