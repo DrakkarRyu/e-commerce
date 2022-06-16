@@ -50,12 +50,13 @@ const ProductDetails = () => {
                 Also we recommend you...
                 {
                     productsFiltered.map(product => (
-                        <li key={product.id}>
+                        <li className='card' key={product.id}>
                             <Link to={`/products/${product.id}`}>
                                 <h2>{product.title}</h2>
-                                <img src={product.productImgs?.[0]} alt="" />
-                                <img src={product.productImgs?.[1]} alt="" />
-                                <img src={product.productImgs?.[2]} alt="" />
+                                <div className='images-hover'>
+                                    <img className='over' src={product.productImgs?.[0]} alt="" />
+                                    <img src={product.productImgs?.[2]} alt="" />
+                                </div>
                                 <h3>${product.price}</h3>
                             </Link>
                         </li>

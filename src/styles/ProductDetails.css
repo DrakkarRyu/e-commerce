@@ -3,3 +3,43 @@
     max-height: 28em;
     max-width: 30em;
 }
+
+.Recomendations{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding-top: 50px;
+    width: 250px;
+    margin: auto;
+}
+
+.card li{
+    cursor: default;
+    text-align: center;
+    background-color: #ffffff;    
+}
+
+.card {
+    list-style: none;
+    text-align: center;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    margin-top: 50px;
+    overflow:hidden;
+    padding: 1rem;
+    justify-content: center;
+    height: 100%;
+    width: 40vw;
+    min-height: 19rem;
+    font-size: 1rem;
+}
+
+.card img{
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}

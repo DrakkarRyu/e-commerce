@@ -3,11 +3,13 @@
     display: flex;
     justify-content: space-between;
     padding: 2em;
+    margin-left: 65%;
+    bottom: 70px;
 }
 
 .login {
     position: absolute;
-    bottom: -200px;
+    bottom: -50px;
     padding: 10px;
     background: #ffffff;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, .7);

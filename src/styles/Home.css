@@ -21,9 +21,16 @@
 }
 
 .card img{
-    margin: 1rem auto 0 auto;
-    max-height: 8em;
-    max-width: 10em;
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+.card h2, h3{
+    text-decoration: none;
+    color: black;
 }
 
 .container{
@@ -31,4 +38,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     min-height: 100vh;
+    padding-top: 50px;
+    width: 250px;
+    margin: auto;
 }
